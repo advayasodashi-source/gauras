@@ -3,26 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vandita</title>
+    <title>Holistic Healing</title>
+
     <style>
         body {
-            font-family: sans-serif;
-            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1549576490-b0b4831ef60a");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
             text-align: center;
-            padding: 80px;
         }
+
+        /* Sidebar Style */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.85);
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding-top: 60px;
+            backdrop-filter: blur(8px);
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 22px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Menu button */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 32px;
+            cursor: pointer;
+            color: #fff;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
         h1 {
-            color: #444;
-            font-size: 40px;
+            font-size: 48px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
+
         p {
-            color: #666;
-            font-size: 20px;
+            font-size: 22px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .tagline {
+            font-size: 26px;
+            margin-top: 20px;
+            font-style: italic;
         }
     </style>
 </head>
+
 <body>
-    <h1>Welcome</h1>
-    <p>This space is opening with love and intention.</p>
+
+    <!-- Menu Button -->
+    <span class="menu-btn" onclick="openNav()">☰</span>
+
+    <!-- Sliding Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" onclick="closeNav()">❌ Close</a>
+        <a href="#">Home</a>
+        <a href="#">About Me</a>
+        <a href="#">Healing Modalities</a>
+        <a href="#">Sessions</a>
+        <a href="#">Testimonials</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Body -->
+    <div class="overlay">
+        <h1>Holistic Healing</h1>
+        <p>Awakening, Balance, and Inner Harmony through awareness, compassion and heart-centered guidance.</p>
+        <div class="tagline">“In silence, we return to wholeness.”</div>
+    </div>
+
+    <!-- Navigation JavaScript -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+
 </body>
 </html>
