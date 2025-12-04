@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Holistic Healing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2ebe5;
+      color: #333;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 48px;
+    }
+    p {
+      font-size: 20px;
+      max-width: 600px;
+    }
+    .form-box {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 450px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #d6b8ff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #c7a6f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact</h1>
+  <p>If something within you feels drawn to connect, collaborate, or explore healing work, you may reach out through the form below.</p>
+
+  <div class="form-box">
+    <form action="https://formspree.io/f/xkgdznoo" method="POST">
+      
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>
