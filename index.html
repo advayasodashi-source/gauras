@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Holistic Healing</title>
   <style>
+    <script>
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicToggle");
+
+  btn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  });
+</script>
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -14,7 +27,7 @@
       color: #fff;
       <button id="musicToggle">🔊 Play / Stop</button>
 <audio id="bgMusic" loop>
-  <source src="tanpura.wav" type="audio/wav">
+  <source src="dhun1.mp3" type="audio/mp3">
 </audio>
     }
 
