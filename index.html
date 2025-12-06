@@ -4,78 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Holistic Healing</title>
-  <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  header {
-    text-align: center;
-    padding: 20px;
-  }
-
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  .intro {
-    text-align: center;
-    max-width: 600px;
-    margin: auto;
-    font-size: 1.1rem;
-    padding: 10px;
-  }
-
-  .nav-links {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .nav-links a {
-    padding: 12px 20px;
-    background: #f0f0f0;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: 0.3s;
-  }
-
-  .nav-links a:hover {
-    background: #e0e0e0;
-  }
-
-  /* Mobile Adjustments */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 1.8rem;
-    }
-    .nav-links a {
-      width: 100%;
-      text-align: center;
-    }
-  }
-</style>
 
   <style>
-    <script>
-  const music = document.getElementById("bgMusic");
-  const btn = document.getElementById("musicToggle");
-
-  btn.addEventListener("click", () => {
-    if (music.paused) {
-      music.play();
-    } else {
-      music.pause();
-    }
-  });
-</script>
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -83,10 +13,6 @@
       background-size: cover;
       background-position: center;
       color: #fff;
-      <button id="musicToggle">🔊 Play / Stop</button>
-<audio id="bgMusic" loop>
-  <source src="dhun1.mp3" type="audio/mp3">
-</audio>
     }
 
     /* Sidebar */
@@ -124,6 +50,7 @@
     h1 {
       font-size: 60px;
       text-shadow: 0 0 12px rgba(0,0,0,0.7);
+      margin-top: 0;
     }
 
     p {
@@ -133,9 +60,81 @@
       padding: 20px;
       border-radius: 10px;
     }
+
+    /* Music button */
+    #musicToggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 18px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      backdrop-filter: blur(4px);
+    }
+
+    #musicToggle:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 700px) {
+      .sidebar {
+        width: 180px;
+      }
+
+      .content {
+        margin-left: 190px;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        padding: 10px 14px;
+        font-size: 16px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 16px;
+        margin: auto;
+      }
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- Sidebar -->
   <div class="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -147,6 +146,7 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <!-- Main content -->
   <div class="content">
     <h1>Holistic Healing</h1>
     <p>
@@ -155,5 +155,28 @@
       and mindful living.
     </p>
   </div>
+
+  <!-- Music player -->
+  <button id="musicToggle">🔊 Play / Stop</button>
+
+  <audio id="bgMusic" loop>
+    <source src="dhun1.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicToggle");
+
+    btn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "🔇 Stop";
+      } else {
+        music.pause();
+        btn.textContent = "🔊 Play";
+      }
+    });
+  </script>
+
 </body>
 </html>
