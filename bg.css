@@ -1,27 +1,13 @@
-/* ------------------------------
-   Elegant Soft-Dark Floral Glow Background
-   ------------------------------ */
-
 body {
   margin: 0;
   padding: 0;
-  background: #eadff1; /* slightly darker lavender base */
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(180, 130, 190, 0.55) 0%, transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(140, 100, 160, 0.50) 0%, transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(160, 120, 180, 0.40) 0%, transparent 70%);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  animation: subtleMove 18s ease-in-out infinite alternate;
-}
 
-/* Soft floating effect */
-@keyframes subtleMove {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 4% 4%;
-  }
+  /* Your floral background image */
+  background-image: url('flowers.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  font-family: Arial, sans-serif;
 }
