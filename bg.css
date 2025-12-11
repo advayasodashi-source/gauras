@@ -1,101 +1,27 @@
-/* ----------------------------------------- */
-/* ROOT VARIABLES */
-/* ----------------------------------------- */
-:root{
-  --fb-color-1: #FFE4E1;
-  --fb-color-2: #FFD6A5;
-  --fb-color-3: #C7F9CC;
-  --fb-opacity: 0.95;
-  --fb-density: 1;
-  --fb-tile-size: 160px;
+/* ------------------------------
+   Elegant Soft-Dark Floral Glow Background
+   ------------------------------ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eadff1; /* slightly darker lavender base */
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(180, 130, 190, 0.55) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(140, 100, 160, 0.50) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(160, 120, 180, 0.40) 0%, transparent 70%);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  animation: subtleMove 18s ease-in-out infinite alternate;
 }
 
-/* ----------------------------------------- */
-/* ORIGINAL FLORAL BACKGROUND */
-/* ----------------------------------------- */
-.floral-bg{
-  background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?>%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cdefs%3E%3Cpattern id='p' patternUnits='userSpaceOnUse' width='160' height='160'%3E%3Crect width='160' height='160' fill='none'/%3E%3Cg transform='translate(40 48) scale(0.9)'%3E%3Cpath d='M0 -18 C8 -22 18 -26 22 -18 C26 -10 18 -6 8 -2 C-2 2 -10 6 -12 14 C-14 22 -8 26 -2 22 C4 18 2 8 0 -18 Z' fill='%23FFE4E1'/%3E%3Ccircle r='6' fill='%23ffffff'/%3E%3C/g%3E%3Cg transform='translate(112 80) scale(0.765)'%3E%3Cpath d='M0 -18 C8 -22 18 -26 22 -18 C26 -10 18 -6 8 -2 C-2 2 -10 6 -12 14 C-14 22 -8 26 -2 22 C4 18 2 8 0 -18 Z' fill='%23FFD6A5'/%3E%3Ccircle r='6' fill='%23ffffff'/%3E%3C/g%3E%3Cg transform='translate(72 125) scale(0.72) rotate(-20)'%3E%3Cpath d='M0 -18 C8 -22 18 -26 22 -18 C26 -10 18 -6 8 -2 C-2 2 -10 6 -12 14 C-14 22 -8 26 -2 22 C4 18 2 8 0 -18 Z' fill='%23C7F9CC'/%3E%3Ccircle r='6' fill='%23ffffff'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: var(--fb-tile-size) var(--fb-tile-size);
-  background-position: center;
-  background-attachment: scroll;
-}
-
-@media (max-width: 640px){
-  :root{ --fb-tile-size: 120px; }
-}
-
-@media (min-width: 1024px){
-  :root{ --fb-tile-size: 200px; }
-}
-
-.floral-bg--full{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.floral-bg--content{
-  position: relative;
-  z-index: 10;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce){
-  .floral-bg{
-    background-image: none;
-    background-color: var(--fb-color-1);
+/* Soft floating effect */
+@keyframes subtleMove {
+  0% {
+    background-position: 0% 0%;
   }
-}
-
-/* ----------------------------------------- */
-/* NEW BACKGROUND OPTIONS FOR PREVIEW */
-/* ----------------------------------------- */
-
-.floral1 { 
-  background: 
-    url("https://www.transparenttextures.com/patterns/paper-fibers.png"),
-    linear-gradient(135deg, #fff6f8 0%, #e9fff0 100%);
-}
-
-.floral2 {
-  background: 
-    url("https://www.transparenttextures.com/patterns/cross-scratches.png"),
-    linear-gradient(135deg, #f4fff8, #e8f9ff);
-}
-
-.floral3 {
-  background:
-    url("https://www.transparenttextures.com/patterns/flowers.png"),
-    #fff7fa;
-  background-size: 300px;
-}
-
-.floral4 {
-  background:
-    url("https://www.transparenttextures.com/patterns/binding-light.png"),
-    linear-gradient(#fffdf5, #fff8e6);
-}
-
-.floral5 {
-  background:
-    url("https://www.transparenttextures.com/patterns/soft-kill.png"),
-    linear-gradient(135deg, #fcefff, #e2fff9);
-}
-
-.floral6 {
-  background:
-    url("https://www.transparenttextures.com/patterns/subtle-grunge.png"),
-    #fafafa;
-}
-
-.floral7 {
-  background: linear-gradient(135deg, #fff1f7, #e8faff);
-}
-
-.floral8 {
-  background:
-    url("https://www.transparenttextures.com/patterns/old-wall.png"),
-    linear-gradient(#fff9f3, #f6fff4);
+  100% {
+    background-position: 4% 4%;
+  }
 }
