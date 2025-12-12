@@ -11,28 +11,39 @@
       background: #f2ebe5;
       color: #333;
       padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;   /* centers the content */
     }
+
     h1 {
       font-size: 48px;
+      text-align: center;
     }
+
     p {
       font-size: 20px;
       max-width: 600px;
+      text-align: center;
     }
+
     .form-box {
       background: #ffffff;
       padding: 25px;
       border-radius: 12px;
+      width: 100%;
       max-width: 450px;
       box-shadow: 0 0 15px rgba(0,0,0,0.08);
       margin-top: 20px;
     }
+
     label {
       font-size: 16px;
       font-weight: 600;
       display: block;
       margin-top: 15px;
     }
+
     input, textarea {
       width: 100%;
       padding: 10px;
@@ -41,6 +52,7 @@
       border: 1px solid #ccc;
       font-size: 16px;
     }
+
     button {
       margin-top: 20px;
       padding: 12px 20px;
@@ -52,19 +64,40 @@
       color: #333;
       font-weight: 600;
       transition: 0.3s;
+      width: 100%;
     }
+
     button:hover {
       background: #c7a6f5;
+    }
+
+    .qr-box {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .qr-box img {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .qr-box img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+
   <h1>Contact</h1>
   <p>If something within you feels drawn to connect, collaborate, or explore healing work, you may reach out through the form below.</p>
 
   <div class="form-box">
     <form action="https://formspree.io/f/xkgdznoo" method="POST">
-      <input type="hidden" name="_redirect" value="https://feel2heal.in/thanks.html" />
+
+      <!-- Redirect to main page after submit -->
+      <input type="hidden" name="_redirect" value="https://feel2heal.in">
 
       <label>Your Name</label>
       <input type="text" name="name" required>
@@ -74,9 +107,18 @@
 
       <label>Message</label>
       <textarea name="message" rows="5" required></textarea>
-       
+
       <button type="submit">Send Message</button>
     </form>
   </div>
+
+  <!-- QR LINK SECTION -->
+  <div class="qr-box">
+    <p>Connect on Telegram:</p>
+    <a href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">
+      <img src="telegramqr.png" alt="Telegram QR Code">
+    </a>
+  </div>
+
 </body>
 </html>
