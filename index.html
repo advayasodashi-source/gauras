@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="icon1.ico" type="image/x-icon">
-<link rel="shortcut icon" href="icon1.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="icon1.ico" type="image/x-icon">
 
   <title>fee2nheal</title>
 
@@ -15,7 +15,7 @@
       background-image: url('glowers1.png');
       background-size: cover;
       background-position: center;
-      color: #fff;
+      color: #6A3B6E; /* deep plum text */
     }
 
     /* Sidebar */
@@ -25,8 +25,8 @@
       top: 0;
       width: 220px;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(2px);
+      background: rgba(246, 241, 234, 0.85); /* soft cream */
+      backdrop-filter: blur(4px);
       padding-top: 60px;
     }
 
@@ -34,13 +34,13 @@
       display: block;
       padding: 14px 22px;
       text-decoration: none;
-      color: #fff;
+      color: #6A3B6E;
       font-size: 18px;
       transition: 0.3s;
     }
 
     .sidebar a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(181, 74, 106, 0.15); /* muted berry hover */
     }
 
     /* Main content */
@@ -50,18 +50,42 @@
       backdrop-filter: blur(2px);
     }
 
-    h1 {
-      font-size: 60px;
-      text-shadow: 0 0 12px rgba(0,0,0,0.7);
+    h1, h2 {
+      color: #6A3B6E;
+      text-shadow: 0 2px 6px rgba(106, 59, 110, 0.25);
       margin-top: 0;
     }
 
     p {
       font-size: 20px;
       max-width: 600px;
-      background: rgba(0, 0, 0, 0.4);
+     ored;
+      background: rgba(242, 198, 207, 0.85); /* blush pink */
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
+      line-height: 1.6;
+      color: #6A3B6E;
+    }
+
+    /* Register Button */
+    .register-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #F4D35E, #F2C6CF);
+      color: #6A3B6E;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .register-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #F2C6CF, #B54A6A);
+      color: #fff;
     }
 
     /* Music button */
@@ -70,8 +94,8 @@
       bottom: 20px;
       right: 20px;
       padding: 12px 18px;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
+      background: rgba(246, 241, 234, 0.9);
+      color: #6A3B6E;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -80,7 +104,7 @@
     }
 
     #musicToggle:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(181, 74, 106, 0.2);
     }
 
     /* Mobile Responsive */
@@ -94,8 +118,8 @@
         padding: 30px;
       }
 
-      h1 {
-        font-size: 40px;
+      h1, h2 {
+        font-size: 36px;
       }
 
       p {
@@ -122,8 +146,8 @@
         padding: 20px;
       }
 
-      h1 {
-        font-size: 32px;
+      h1, h2 {
+        font-size: 30px;
         text-align: center;
       }
 
@@ -152,41 +176,26 @@
   <!-- Main content -->
   <div class="content">
     <h2>🌱 Welcome to Your First Step of Healing (Yes, the Real First One)</h2>
+
     <p>
       Before you fix your career, your relationships, your bank balance, your chakras, or your destiny…
-there’s someone waiting quietly inside you.<br>
-Your Inner Child.
-    </p> <br>
-    <p>
-      Still carrying tiny fears, big dreams, old hurts, and unfinished hugs? <br>
-Inner Child Healing is not “extra work” in your healing journey —<br>
-it is the starting line.<br>
-The place where real transformation begins. 💛
+      there’s someone waiting quietly inside you.<br>
+      <strong>Your Inner Child.</strong>
     </p>
+    <br>
+
+    <p>
+      Still carrying tiny fears, big dreams, old hurts, and unfinished hugs?<br>
+      Inner Child Healing is not “extra work” in your healing journey —<br>
+      it is the starting line.<br>
+      The place where real transformation begins. 💛
+    </p>
+
     <a href="register.html" class="register-btn">Begin My Healing Journey</a>
-
-<style>
-.register-btn {
-  display: inline-block;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #f7b733, #fc4a1a);
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-}
-
-.register-btn:hover {
-  transform: scale(1.05);
-}
-</style>
-
   </div>
 
   <!-- Music player -->
-  <button id="musicToggle">Play / Stop</button>
+  <button id="musicToggle">🔊 Play</button>
 
   <audio id="bgMusic" loop>
     <source src="dhun1.mp3" type="audio/mp3">
@@ -199,7 +208,7 @@ The place where real transformation begins. 💛
     btn.addEventListener("click", () => {
       if (music.paused) {
         music.play();
-        btn.textContent = "Stop";
+        btn.textContent = "⏸ Stop";
       } else {
         music.pause();
         btn.textContent = "🔊 Play";
