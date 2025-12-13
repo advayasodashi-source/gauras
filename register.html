@@ -48,7 +48,7 @@
     }
 
     input:focus, textarea:focus {
-      border-color: #f7b733;
+      border-color: #25D366;
     }
 
     button {
@@ -57,7 +57,7 @@
       font-size: 16px;
       border: none;
       border-radius: 30px;
-      background: linear-gradient(135deg, #f7b733, #fc4a1a);
+      background: linear-gradient(135deg, #25D366, #128C7E);
       color: white;
       cursor: pointer;
       transition: transform 0.2s ease;
@@ -86,11 +86,11 @@
     <h1>Begin My Healing Journey</h1>
     <p>Your inner child is already smiling that you're here.</p>
 
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="email" placeholder="Your Email Address" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number">
-      <textarea name="message" rows="4" placeholder="Anything you'd like to share before we begin?"></textarea>
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="Your Full Name" required>
+      <input type="email" id="email" placeholder="Your Email Address" required>
+      <input type="tel" id="phone" placeholder="Your Phone Number">
+      <textarea id="message" rows="4" placeholder="Anything you'd like to share before we begin?"></textarea>
 
       <button type="submit">Yes, I’m Ready to Heal</button>
     </form>
@@ -99,6 +99,45 @@
       This is a safe space. Your details stay private & respected.
     </div>
   </div>
+
+<script>
+  function sendToWhatsApp() {
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    // Phone validation (India – 10 digits)
+    var phoneRegex = /^[6-9]\d{9}$/;
+
+    if (!phoneRegex.test(phone)) {
+      alert("Please enter a valid 10-digit WhatsApp number 📱");
+      return;
+    }
+
+    // Confirmation step
+    var confirmNumber = confirm(
+      "We will contact you on this WhatsApp number:\n\n📱 " + phone + "\n\nIs this correct?"
+    );
+
+    if (!confirmNumber) {
+      return;
+    }
+
+    var whatsappNumber = "917219369195"; // <-- YOUR NUMBER HERE
+
+    var text =
+      "🌱 Inner Child Healing Registration %0A%0A" +
+      "Name: " + name + "%0A" +
+      "Email: " + email + "%0A" +
+      "Phone: " + phone + "%0A%0A" +
+      "Message:%0A" + message;
+
+    var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+    window.open(url, "_blank");
+  }
+</script>
+
 
 </body>
 </html>
