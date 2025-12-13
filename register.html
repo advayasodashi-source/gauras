@@ -26,16 +26,8 @@
       text-align: center;
     }
 
-    .register-box h1 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .register-box p {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 25px;
-    }
+    h1 { color:#333; margin-bottom:10px; }
+    p { font-size:14px; color:#666; margin-bottom:25px; }
 
     input, textarea {
       width: 100%;
@@ -44,11 +36,11 @@
       border: 1px solid #ccc;
       border-radius: 10px;
       font-size: 15px;
-      outline: none;
     }
 
     input:focus, textarea:focus {
-      border-color: #25D366;
+      border-color: #7b5cff;
+      outline: none;
     }
 
     button {
@@ -57,10 +49,9 @@
       font-size: 16px;
       border: none;
       border-radius: 30px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      background: linear-gradient(135deg, #7b5cff, #b993ff);
       color: white;
       cursor: pointer;
-      transition: transform 0.2s ease;
     }
 
     button:hover {
@@ -72,72 +63,52 @@
       color: #777;
       margin-top: 15px;
     }
-
-    .heart {
-      font-size: 28px;
-    }
   </style>
 </head>
 
 <body>
 
-  <div class="register-box">
-    <div class="heart">💛</div>
-    <h1>Begin My Healing Journey</h1>
-    <p>Your inner child is already smiling that you're here.</p>
+<div class="register-box">
+  <h1>Begin My Healing Journey</h1>
+  <p>Your inner child is already smiling that you're here 💛</p>
 
-    <form onsubmit="sendToWhatsApp(); return false;">
-      <input type="text" id="name" placeholder="Your Full Name" required>
-      <input type="email" id="email" placeholder="Your Email Address" required>
-      <input type="tel" id="phone" placeholder="Your Phone Number">
-      <textarea id="message" rows="4" placeholder="Anything you'd like to share before we begin?"></textarea>
+  <form onsubmit="sendEmail(); return false;">
+    <input type="text" id="name" placeholder="Your Full Name" required>
+    <input type="email" id="email" placeholder="Your Email Address" required>
 
-      <button type="submit">Yes, I’m Ready to Heal</button>
-    </form>
+    <textarea id="message" rows="4"
+      placeholder="Anything you'd like to share before we begin?"></textarea>
 
-    <div class="note">
-      This is a safe space. Your details stay private & respected.
-    </div>
+    <button type="submit">Yes, I’m Ready to Heal</button>
+  </form>
+
+  <div class="note">
+    We’ll reply to this email to confirm and continue.  
+    No phone number needed 🤍
   </div>
+</div>
 
 <script>
-  function sendToWhatsApp() {
-    var name = document.getElementById("name").value.trim();
-    var email = document.getElementById("email").value.trim();
-    var phone = document.getElementById("phone").value.trim();
-    var message = document.getElementById("message").value.trim();
+function sendEmail() {
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var message = document.getElementById("message").value.trim();
 
-    // Phone validation (India – 10 digits)
-    var phoneRegex = /^[6-9]\d{9}$/;
+  var subject = encodeURIComponent("Inner Child Healing – Registration");
+  var body = encodeURIComponent(
+    "Hello,\n\n" +
+    "My name is " + name + ".\n" +
+    "I would like to begin my inner child healing journey.\n\n" +
+    "Message:\n" + message + "\n\n" +
+    "Kind regards,\n" +
+    name + "\n" +
+    email
+  );
 
-    if (!phoneRegex.test(phone)) {
-      alert("Please enter a valid 10-digit WhatsApp number 📱");
-      return;
-    }
-
-    // Confirmation step
-    var confirmNumber = confirm(
-      "We will contact you on this WhatsApp number:\n\n📱 " + phone + "\n\nIs this correct?"
-    );
-
-    if (!confirmNumber) {
-      return;
-    }
-
-    var whatsappNumber = "917219369195"; // <-- YOUR NUMBER HERE
-
-    var text =
-      "🌱 Inner Child Healing Registration %0A%0A" +
-      "Name: " + name + "%0A" +
-      "Email: " + email + "%0A" +
-      "Phone: " + phone + "%0A%0A" +
-      "Message:%0A" + message;
-
-    var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
-    window.open(url, "_blank");
-  }
+  var mailtoLink = "mailto:YOUR_EMAIL@example.com?subject=" + subject + "&body=" + body;
+  window.location.href = mailtoLink;
+}
 </script>
-
 
 </body>
 </html>
