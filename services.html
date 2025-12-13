@@ -1,35 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - Holistic Healing</title>
+  <meta charset="UTF-8">
+  <title>Begin My Healing Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5efe7;
-      color: #333;
-      padding: 40px;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fff1eb, #ace0f9);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+
+    .register-box {
+      background: white;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
     }
-    ul {
-      font-size: 20px;
-      line-height: 1.8;
+
+    h1 { color:#333; margin-bottom:10px; }
+    p { font-size:14px; color:#666; margin-bottom:25px; }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #7b5cff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #7b5cff, #b993ff);
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 15px;
     }
   </style>
 </head>
+
 <body>
-  <h1>Services</h1>
-  <ul>
-    <li>Energy Healing & Balancing</li>
-    <li>Inner Child Work & Emotional Release</li>
-    <li>Past Life Regression (PLR)</li>
-    <li>Holistic Guidance & Intuitive Mentoring</li>
-    <li>Meditation & Breathwork Sessions</li>
-  </ul>
+
+<div class="register-box">
+  <h1>Begin My Healing Journey</h1>
+  <p>Your inner child is already smiling that you're here 💛</p>
+
+  <form onsubmit="sendEmail(); return false;">
+    <input type="text" id="name" placeholder="Your Full Name" required>
+    <input type="email" id="email" placeholder="Your Email Address" required>
+
+    <textarea id="message" rows="4"
+      placeholder="Anything you'd like to share before we begin?"></textarea>
+
+    <button type="submit">Yes, I’m Ready to Heal</button>
+  </form>
+
+  <div class="note">
+    We’ll reply to this email to confirm and continue.  
+    No phone number needed 🤍
+  </div>
+</div>
+
+<script>
+function sendEmail() {
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var message = document.getElementById("message").value.trim();
+
+  var subject = encodeURIComponent("Inner Child Healing – Registration");
+  var body = encodeURIComponent(
+    "Hello,\n\n" +
+    "My name is " + name + ".\n" +
+    "I would like to begin my inner child healing journey.\n\n" +
+    "Message:\n" + message + "\n\n" +
+    "Kind regards,\n" +
+    name + "\n" +
+    email
+  );
+
+  var mailtoLink = "mailto:advaya.sodashi@gmail.com?subject=" + subject + "&body=" + body;
+  window.location.href = mailtoLink;
+}
+</script>
+
 </body>
 </html>
